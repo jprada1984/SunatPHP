@@ -1,4 +1,7 @@
 <?php
+
+namespace SunatPhpApi;
+
 	class cURL
 	{
 		var $headers;
@@ -19,8 +22,8 @@
 		{
 			return $this->info;
 		}
-		function cURL($cookies=TRUE,$referer='http://sisweb.reniec.gob.pe/sioconsultasRRCC/login.do',$cookie='cookies.txt',
-		    $compression='gzip,deflate',$proxy='')
+
+		function cURL($cookies=TRUE,$referer='http://sisweb.reniec.gob.pe/sioconsultasRRCC/login.do',$cookie='cookies.txt',$compression='gzip,deflate',$proxy='')
 		{
 			$this->headers[0] = "Accept-Encoding: gzip, deflate, sdch";
 			$this->headers[] = "Accept-Language: es-419,es;q=0.8";
@@ -47,12 +50,13 @@
 				$this->cookie_file=$cookie_file;
 			}
 			else
-			{				
+			{
+				//fopen($cookie_file,'w') or $this->error('The cookie file could not be opened. Make sure this directory has the correct permissions');
+				//fclose($this->cookie_file);
 				file_put_contents($cookie_file,"");
 				$this->cookie_file=$cookie_file;
 			}
 		}
-		
 		function post( $url, array $post = array(), array $options = array() )
 		{
 			$defaults = array(

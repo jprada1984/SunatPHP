@@ -1,6 +1,8 @@
 <?php
 
+	namespace SunatPhpApi;
 
+	use SunatPhpApi\cURL;
 
 	class Sunat{
 		var $cc;  //Class cUrl

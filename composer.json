@@ -1,0 +1,17 @@
+{
+    "name": "arseloji/sunat-php",
+    "authors": [
+        {
+            "name": "Jimmy Prada Guadalupe",
+            "email": "arseloji@outlook.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "SunatPhpApi\\":"src"
+        }
+    }
+}
